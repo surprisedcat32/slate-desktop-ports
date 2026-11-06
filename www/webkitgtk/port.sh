@@ -5,7 +5,6 @@ cd "/$PORTS_DIR"
 curl -LO https://webkitgtk.org/releases/webkitgtk-2.54.2.tar.xz
 tar -xf webkitgtk-2.54.2.tar.xz
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd "/$PORTS_DIR"
 cmake -S . -B build -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \

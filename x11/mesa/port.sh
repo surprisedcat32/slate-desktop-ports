@@ -6,7 +6,6 @@ cd "/$PORTS_DIR"
 curl -LO https://archive.mesa3d.org/mesa-26.2.6.tar.xz
 tar -xf mesa-26.2.6.tar.xz
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd "/$PORTS_DIR"
 
 export PYTHON=/usr/bin/python3.13
 export PYTHONPATH=/usr/lib/python3.13/site-packages

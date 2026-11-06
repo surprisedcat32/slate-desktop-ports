@@ -8,7 +8,6 @@ cd "/$PORTS_DIR"
 curl -LO https://github.com/xkbcommon/libxkbcommon/archive/refs/tags/xkbcommon-1.13.2.tar.gz
 tar -xf xkbcommon-1.13.2.tar.gz
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd "/$PORTS_DIR"
 
 meson setup build \
     --prefix=/usr \

@@ -5,7 +5,6 @@ cd "/$PORTS_DIR"
 curl -LO https://xorg.freedesktop.org/archive/individual/lib/libxcb-1.17.0.tar.xz
 tar -xf libxcb-1.17.0.tar.xz
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd "/$PORTS_DIR"
 ./configure  --without-doxygen --prefix=/usr
 make DESTDIR="$DESTDIR" install
 

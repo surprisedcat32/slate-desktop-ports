@@ -7,7 +7,6 @@ curl -LO https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.5.1/sha
 
 tar -xf shared-mime-info-2.5.1.tar.bz2
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd "/$PORTS_DIR"
 
 meson setup build \
     --prefix=/usr \

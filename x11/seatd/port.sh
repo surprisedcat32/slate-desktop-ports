@@ -8,7 +8,6 @@ cd "/$PORTS_DIR"
 
 mkdir build
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd "/$PORTS_DIR"
 
 meson setup .. \
     --prefix=/usr \

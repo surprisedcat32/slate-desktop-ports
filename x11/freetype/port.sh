@@ -5,7 +5,6 @@ cd "/$PORTS_DIR"
 curl -LO https://download.savannah.gnu.org/releases/freetype/freetype-2.15.0.tar.xz
 tar -xf freetype-2.15.0.tar.xz
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd "/$PORTS_DIR"
 
 meson setup build --prefix=/usr
 
