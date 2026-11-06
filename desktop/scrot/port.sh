@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+cd "${PORT_DIR:-/usr/ports}/desktop/scrot"
+
+curl -LO https://github.com/resurrecting-open-source-projects/scrot/releases/download/2.0.0/scrot-2.0.0.tar.gz
+tar -xf scrot-2.0.0.tar.gz
+cd scrot-2.0.0
+
+./configure --prefix=/usr
+
+make -j"$MAKETHREADS"
+make DESTDIR="$DESTDIR" install

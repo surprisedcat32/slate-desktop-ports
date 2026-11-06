@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+cd "${PORT_DIR:-/usr/ports}/desktop/xclip"
+
+curl -LO https://github.com/astrand/xclip/archive/0.13.tar.gz
+tar -xf 0.13.tar.gz
+cd xclip-0.13
+
+autoreconf -fi
+./configure --prefix=/usr
+
+make -j"$MAKETHREADS"
+make DESTDIR="$DESTDIR" install install.man
