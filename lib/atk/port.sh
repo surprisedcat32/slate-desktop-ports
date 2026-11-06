@@ -6,6 +6,8 @@ cd "/$PORTS_DIR"
 
 curl -LO https://download.gnome.org/sources/atk/2.38/atk-2.38.0.tar.xz
 tar -xf atk-2.38.0.tar.xz
+archive=$(sed -n 's/^tar -xf //p' "$0" | tail -n 1)
+cd "$(tar -tf "$archive" | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 
 meson setup build \

@@ -6,6 +6,8 @@ cd "/$PORTS_DIR"
 
 curl -LO https://downloads.sourceforge.net/project/dejavu/dejavu/2.37/dejavu-fonts-ttf-2.37.tar.bz2
 tar -xf dejavu-fonts-ttf-2.37.tar.bz2
+archive=$(sed -n 's/^tar -xf //p' "$0" | tail -n 1)
+cd "$(tar -tf "$archive" | head -1 | cut -d/ -f1)"
 
 mkdir -p ${DESTDIR:-}/usr/share/fonts/dejavu
 find dejavu-fonts-ttf-2.37 -name '*.ttf' \

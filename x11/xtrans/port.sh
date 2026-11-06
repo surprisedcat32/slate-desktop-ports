@@ -2,6 +2,7 @@
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd "/$PORTS_DIR"
 git clone --depth 1 https://gitlab.freedesktop.org/xorg/lib/libxtrans.git
+cd "$(basename "$(echo "&" | sed -E 's|.*https?://[^/]+/[^/]+/([^ ]+)(.git)?$|1|' )" .git)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 ./autogen.sh
 ./configure --prefix=/usr

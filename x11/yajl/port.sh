@@ -5,6 +5,8 @@ curl -LO https://github.com/lloyd/yajl/archive/refs/tags/2.1.0/yajl-2.1.0.tar.gz
 curl -LO https://www.linuxfromscratch.org/slfs/view/13.1/download/yajl/yajl-2.1.0-third_party_fixes-1.patch
 
 tar -xf yajl-2.1.0.tar.gz
+archive=$(sed -n 's/^tar -xf //p' "$0" | tail -n 1)
+cd "$(tar -tf "$archive" | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd "/$PORTS_DIR"
 

@@ -4,6 +4,8 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd "/$PORTS_DIR"
 curl -LO https://github.com/Airblader/xcb-util-xrm/releases/download/v1.3/xcb-util-xrm-1.3.tar.bz2
 tar -xf xcb-util-xrm-1.3.tar.bz2
+archive=$(sed -n 's/^tar -xf //p' "$0" | tail -n 1)
+cd "$(tar -tf "$archive" | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 
 ./configure --prefix=/usr --disable-static

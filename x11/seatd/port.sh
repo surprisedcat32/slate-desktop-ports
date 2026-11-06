@@ -3,6 +3,8 @@
 
 curl -LO https://github.com/kennylevinsen/seatd/archive/0.9.3/seatd-0.9.3.tar.gz
 tar -xf seatd-0.9.3.tar.gz
+archive=$(sed -n 's/^tar -xf //p' "$0" | tail -n 1)
+cd "$(tar -tf "$archive" | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd "/$PORTS_DIR"
 

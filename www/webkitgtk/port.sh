@@ -4,6 +4,8 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd "/$PORTS_DIR"
 curl -LO https://webkitgtk.org/releases/webkitgtk-2.54.2.tar.xz
 tar -xf webkitgtk-2.54.2.tar.xz
+archive=$(sed -n 's/^tar -xf //p' "$0" | tail -n 1)
+cd "$(tar -tf "$archive" | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cmake -S . -B build -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \

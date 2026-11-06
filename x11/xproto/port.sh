@@ -6,6 +6,7 @@ cd "/$PORTS_DIR"
 # Fetch a shallow copy of xorgproto. Mesa clones git; xorgproto also
 # publishes release tarballs, which are safer to pin.
 git clone --depth=1 --branch xorgproto-2026.1 \
+cd "$(basename "$(echo "&" | sed -E 's|.*https?://[^/]+/[^/]+/([^ ]+)(.git)?$|1|' )" .git)"
   https://gitlab.freedesktop.org/xorg/proto/xorgproto.git
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}

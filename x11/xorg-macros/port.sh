@@ -5,6 +5,8 @@ cd "/$PORTS_DIR"
 
 curl -LO https://xorg.freedesktop.org/releases/individual/util/util-macros-1.20.2.tar.xz
 tar -xf util-macros-1.20.2.tar.xz
+archive=$(sed -n 's/^tar -xf //p' "$0" | tail -n 1)
+cd "$(tar -tf "$archive" | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 
 ./autogen.sh --prefix=/usr

@@ -5,6 +5,8 @@ cd "/$PORTS_DIR"
 
 curl -LO https://mirror.csclub.uwaterloo.ca/x.org/individual/lib/libXfont2-2.0.6.tar.xz
 tar -xf libXfont2-2.0.6.tar.xz
+archive=$(sed -n 's/^tar -xf //p' "$0" | tail -n 1)
+cd "$(tar -tf "$archive" | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/share/pkgconfig
 ./autogen.sh

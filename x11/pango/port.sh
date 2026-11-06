@@ -2,6 +2,8 @@
 
 curl -LO https://download.gnome.org/sources/pango/1.58/pango-1.58.2.tar.xz
 tar -xf pango-1.58.2.tar.xz
+archive=$(sed -n 's/^tar -xf //p' "$0" | tail -n 1)
+cd "$(tar -tf "$archive" | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd "/$PORTS_DIR"
 

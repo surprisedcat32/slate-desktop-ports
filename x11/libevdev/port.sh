@@ -5,6 +5,8 @@ cd "/$PORTS_DIR"
 
 curl -LO https://www.freedesktop.org/software/libevdev/libevdev-1.12.0.tar.xz
 tar -xf libevdev-1.12.0.tar.xz
+archive=$(sed -n 's/^tar -xf //p' "$0" | tail -n 1)
+cd "$(tar -tf "$archive" | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 
 meson setup build --prefix=/usr -Ddocumentation=disabled -Dtests=disabled
