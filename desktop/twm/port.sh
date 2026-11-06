@@ -1,10 +1,12 @@
 #!/bin/sh
 
-cd "${PORT_DIR:-/usr/ports}/desktop/twm"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 git clone --depth 1 https://gitlab.freedesktop.org/xorg/app/twm.git
 
-cd twm
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 ./autogen.sh
 

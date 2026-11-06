@@ -1,11 +1,13 @@
 #!/bin/sh
 set -e
 
-cd "${PORT_DIR:-/usr/ports}/desktop/lxterminal"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 curl -LO https://downloads.sourceforge.net/lxde/lxterminal-0.4.1.tar.xz
 tar -xf lxterminal-0.4.1.tar.xz
-cd lxterminal-0.4.1
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 ./configure --prefix=/usr --sysconfdir=/etc --disable-static
 

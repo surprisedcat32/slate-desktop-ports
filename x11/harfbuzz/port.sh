@@ -3,10 +3,12 @@
 
 curl -LO https://github.com/harfbuzz/harfbuzz/releases/download/14.5.0/harfbuzz-14.5.0.tar.xz
 tar -xf harfbuzz-14.5.0.tar.xz
-cd harfbuzz-14.5.0
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 mkdir build
-cd build
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 meson setup .. \
     --prefix=/usr \

@@ -1,9 +1,11 @@
 #!/bin/sh
 
-cd "${PORT_DIR:-/usr/ports}/x11/fontconfig"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 curl -LO https://gitlab.freedesktop.org/api/v4/projects/890/packages/generic/fontconfig/2.17.1/fontconfig-2.17.1.tar.xz
 tar -xf fontconfig-2.17.1.tar.xz
-cd fontconfig-2.17.1
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib64/pkgconfig:/usr/share/pkgconfig
 
 meson setup build \

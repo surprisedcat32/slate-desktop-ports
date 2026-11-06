@@ -1,9 +1,11 @@
 #!/bin/sh
-cd "${PORT_DIR:-/usr/ports}/desktop/slock"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 curl -LO https://dl.suckless.org/tools/slock-1.5.tar.gz
 tar -xf slock-1.5.tar.gz
-cd slock-1.5
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 make -j"$MAKETHREADS"
 make PREFIX=/usr DESTDIR="$DESTDIR" install

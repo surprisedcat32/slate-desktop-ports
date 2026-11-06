@@ -1,10 +1,12 @@
 #!/bin/sh
 
-cd "${PORT_DIR:-/usr/ports}/x11/libxcvt"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 curl -LO https://xorg.freedesktop.org/releases/individual/lib/libxcvt-0.1.3.tar.xz
 tar -xf libxcvt-0.1.3.tar.xz
-cd libxcvt-0.1.3
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 meson setup build --prefix=/usr
 

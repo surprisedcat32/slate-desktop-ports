@@ -1,7 +1,9 @@
 #!/bin/sh
-cd "${PORT_DIR:-/usr/ports}/x11/xorgproto"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 git clone --depth 1 https://gitlab.freedesktop.org/xorg/proto/xorgproto.git
-cd xorgproto
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 meson setup build --prefix=/usr
 meson compile -C build -j"$MAKETHREADS"
 DESTDIR="$DESTDIR" meson install -C build

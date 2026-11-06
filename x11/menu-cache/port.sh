@@ -1,10 +1,12 @@
 #!/bin/sh
 set -e
-cd "${PORT_DIR:-/usr/ports}/x11/menu-cache"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 curl -LO https://downloads.sourceforge.net/lxde/menu-cache-1.1.0.tar.xz
 tar -xf menu-cache-1.1.0.tar.xz
-cd menu-cache-1.1.0
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 ./configure --prefix=/usr --disable-static
 

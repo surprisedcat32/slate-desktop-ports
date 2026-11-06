@@ -3,10 +3,12 @@
 
 curl -LO https://github.com/kennylevinsen/seatd/archive/0.9.3/seatd-0.9.3.tar.gz
 tar -xf seatd-0.9.3.tar.gz
-cd seatd-0.9.3
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 mkdir build
-cd build
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 meson setup .. \
     --prefix=/usr \

@@ -1,9 +1,11 @@
 #!/bin/sh
 
-cd "${PORT_DIR:-/usr/ports}/x11/freetype"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 curl -LO https://download.savannah.gnu.org/releases/freetype/freetype-2.15.0.tar.xz
 tar -xf freetype-2.15.0.tar.xz
-cd freetype-2.15.0
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 meson setup build --prefix=/usr
 

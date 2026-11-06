@@ -1,10 +1,12 @@
 #!/bin/sh
 
-cd "${PORT_DIR:-/usr/ports}/x11/libXau"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 curl -LO https://xorg.freedesktop.org/releases/individual/lib/libXau-1.0.12.tar.xz
 tar -xf libXau-1.0.12.tar.xz
-cd libXau-1.0.12
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 ./autogen.sh
 
 ./configure --prefix=/usr

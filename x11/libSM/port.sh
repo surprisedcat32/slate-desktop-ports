@@ -1,10 +1,12 @@
 #!/bin/sh
 
-cd "${PORT_DIR:-/usr/ports}/x11/libSM"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 curl -LO https://xorg.freedesktop.org/releases/individual/lib/libSM-1.2.6.tar.xz
 tar -xf libSM-1.2.6.tar.xz
-cd libSM-1.2.6
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 ./autogen.sh
 

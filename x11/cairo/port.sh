@@ -3,10 +3,12 @@
 
 curl -LO https://cairographics.org/releases/cairo-1.18.6.tar.xz
 tar -xf cairo-1.18.6.tar.xz
-cd cairo-1.18.6
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 mkdir build
-cd build
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 meson setup .. \
     --prefix=/usr \

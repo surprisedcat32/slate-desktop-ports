@@ -1,10 +1,12 @@
 #!/bin/sh
 set -e
-cd "${PORT_DIR:-/usr/ports}/x11/xcb-util-cursor"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 curl -LO https://xcb.freedesktop.org/dist/xcb-util-cursor-0.1.5.tar.xz
 tar -xf xcb-util-cursor-0.1.5.tar.xz
-cd xcb-util-cursor-0.1.5
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 ./configure --prefix=/usr --disable-static
 

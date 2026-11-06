@@ -1,10 +1,12 @@
 #!/bin/sh
 
-cd "${PORT_DIR:-/usr/ports}/x11/xinit"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 curl -LO https://xorg.freedesktop.org/releases/individual/app/xinit-1.4.4.tar.xz
 tar -xf xinit-1.4.4.tar.xz
-cd xinit-1.4.4
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 ./autogen.sh
 

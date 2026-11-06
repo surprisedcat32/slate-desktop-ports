@@ -1,10 +1,12 @@
 #!/bin/sh
 
-cd "${PORT_DIR:-/usr/ports}/x11/xorg-macros"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 curl -LO https://xorg.freedesktop.org/releases/individual/util/util-macros-1.20.2.tar.xz
 tar -xf util-macros-1.20.2.tar.xz
-cd util-macros-1.20.2
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 ./autogen.sh --prefix=/usr
 

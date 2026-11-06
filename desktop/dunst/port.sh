@@ -1,10 +1,12 @@
 #!/bin/sh
 set -e
-cd "${PORT_DIR:-/usr/ports}/desktop/dunst"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 curl -LO https://github.com/dunst-project/dunst/archive/refs/tags/v1.13.2.tar.gz
 tar -xf v1.13.2.tar.gz
-cd dunst-1.13.2
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 meson setup build \
     --prefix=/usr \

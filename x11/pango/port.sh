@@ -2,10 +2,12 @@
 
 curl -LO https://download.gnome.org/sources/pango/1.58/pango-1.58.2.tar.xz
 tar -xf pango-1.58.2.tar.xz
-cd pango-1.58.2
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 mkdir build
-cd build
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 meson setup .. \
     --prefix=/usr \

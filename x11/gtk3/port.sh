@@ -1,11 +1,13 @@
 #!/bin/sh
 set -e
 
-cd "${PORT_DIR:-/usr/ports}/x11/gtk3"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 curl -LO https://download.gnome.org/sources/gtk/3.24/gtk-3.24.52.tar.xz
 tar -xf gtk-3.24.52.tar.xz
-cd gtk-3.24.52
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 meson setup build \
     --prefix=/usr \
     --sysconfdir=/etc \

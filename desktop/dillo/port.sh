@@ -2,11 +2,13 @@
 #!/bin/sh
 set -e
 
-cd "${PORT_DIR:-/usr/ports}/desktop/dillo"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 curl -LO https://github.com/dillo-browser/dillo/releases/download/v3.2.0/dillo-3.2.0.tar.bz2
 tar -xf dillo-3.2.0.tar.bz2
-cd dillo-3.2.0
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 LIBS="-lssl -lcrypto" ./configure \
     --prefix=/usr \

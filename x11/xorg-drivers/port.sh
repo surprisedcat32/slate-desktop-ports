@@ -10,7 +10,8 @@ MODULEDIR="$LIBDIR/xorg/modules"
 export PKG_CONFIG_PATH="/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}"
 CC=gcc
 mkdir -p "$WORK"
-cd "$WORK"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 build_driver() {
     name="$1"

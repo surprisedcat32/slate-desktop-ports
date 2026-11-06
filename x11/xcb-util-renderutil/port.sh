@@ -1,10 +1,12 @@
 #!/bin/sh
 set -e
-cd "${PORT_DIR:-/usr/ports}/x11/xcb-util-renderutil"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 curl -LO https://xcb.freedesktop.org/dist/xcb-util-renderutil-0.3.10.tar.xz
 tar -xf xcb-util-renderutil-0.3.10.tar.xz
-cd xcb-util-renderutil-0.3.10
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 ./configure --prefix=/usr --disable-static
 

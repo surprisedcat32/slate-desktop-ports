@@ -1,11 +1,13 @@
 #!/bin/sh
 set -e
 
-cd "${PORT_DIR:-/usr/ports}/lib/atk"
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 curl -LO https://download.gnome.org/sources/atk/2.38/atk-2.38.0.tar.xz
 tar -xf atk-2.38.0.tar.xz
-cd atk-2.38.0
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 
 meson setup build \
     --prefix=/usr \
