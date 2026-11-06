@@ -1,12 +1,12 @@
 #!/bin/sh
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd $PORTS_DIR
+cd "/$PORTS_DIR"
 
 curl -LO https://xorg.freedesktop.org/releases/individual/app/xkbcomp-1.5.0.tar.xz
 tar -xf xkbcomp-1.5.0.tar.xz
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd $PORTS_DIR
+cd "/$PORTS_DIR"
 
 ./autogen.sh
 export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/share/pkgconfig

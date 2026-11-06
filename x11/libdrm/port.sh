@@ -1,12 +1,12 @@
 #!/bin/sh
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd $PORTS_DIR
+cd "/$PORTS_DIR"
 #thanks LFS for this!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111!1!
 curl -LO https://dri.freedesktop.org/libdrm/libdrm-2.4.134.tar.xz
 tar -xf libdrm-2.4.134.tar.xz
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd $PORTS_DIR
+cd "/$PORTS_DIR"
 
 meson setup build --prefix=/usr
 

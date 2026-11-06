@@ -11,7 +11,7 @@ export PKG_CONFIG_PATH="/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/local/lib/p
 CC=gcc
 mkdir -p "$WORK"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd $PORTS_DIR
+cd "/$PORTS_DIR"
 
 build_driver() {
     name="$1"

@@ -4,11 +4,11 @@
 curl -LO https://i3wm.org/downloads/i3-4.25.1.tar.xz
 tar -xf i3-4.25.1.tar.xz
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd $PORTS_DIR
+cd "/$PORTS_DIR"
 
 mkdir build
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd $PORTS_DIR
+cd "/$PORTS_DIR"
 
 meson setup .. \
     --prefix=/usr \
